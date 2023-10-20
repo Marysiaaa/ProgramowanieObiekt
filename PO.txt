@@ -1,0 +1,615 @@
+using System;
+using System.ComponentModel.Design;
+using System.Diagnostics.CodeAnalysis;
+using System.Net.Sockets;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
+
+namespace ZadaniaNaCwiczenia
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //Cw1();
+            //Cw2();
+            //Cw3();
+            //Cw4();
+            //Cw5();
+            //Cw6();
+            //Cw7();
+            //Cw8();
+            //Cw9();
+            //Cw10();
+            //Cw11();
+            // Cw12();
+            //Cw13();
+            //kalkulator();
+            // Cw14();
+            //Cw15();
+            // Cw16();
+            //Cw17();
+            //Cw18(); 
+            // Cw19();
+            // Cw20();
+            //moje();
+            //moje1();
+            //moje2();
+            //moje3();
+            //moje4();
+           // moje5();
+            //moje6();
+           //moje7();
+            //moje8();
+            moje9();
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+        public static void Cw1()
+        {
+            double C, F;
+            Console.WriteLine("Podaj temperature w stopniach Fahrenheita");
+            F = double.Parse(Console.ReadLine());
+            C = 5 / 9d * (F - 32);
+            Console.WriteLine(C);
+        }
+        public static void Cw2()
+        {
+            Console.WriteLine("podaj liczbe a");
+            var a = double.Parse(Console.ReadLine());
+            Console.WriteLine("podaj liczbe b");
+            var b = double.Parse(Console.ReadLine());
+            Console.WriteLine("podaj liczbe c");
+            var c = double.Parse(Console.ReadLine());
+            double delta = (b * b) - 4 * a * c;
+            Console.WriteLine("Wynik Delty: " + delta);
+        }
+        public static void Cw3()
+        {
+            Console.WriteLine("Podaj wage w kg:");
+            var waga = double.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj wzrost w metrach: ");
+            var wzrost = double.Parse(Console.ReadLine());
+            double BMI = waga / (wzrost * wzrost);
+            Console.WriteLine("Twoje BMI wynosi: " + BMI);
+            if (BMI < 18.5)
+            {
+                Console.WriteLine("NIEDOWAGA");
+            }
+            else if(BMI >18.5 && BMI < 24.99)
+            {
+                Console.WriteLine("PRAWIDLOWA WAGA");
+            }
+            else
+            {
+                Console.WriteLine("NADWAGA");
+            }
+        }
+        public static void Cw4()
+        {int X=100;
+            Console.WriteLine(++X*2);//202;-)
+
+        }
+        public static void Cw5()
+        { int x= 2, y=3;
+            Console.WriteLine(x *= y * 2);
+        }
+        public static void Cw6()
+        {
+            int x, y= 4;
+            x = (y -= 2);
+            x=y++;
+            x = y--;
+        }
+        public static void Cw7()
+        {
+            int x, y= 5;
+            x = ++y * 2;
+            x = y++;
+            x = y--;
+            Console.WriteLine(++y);
+        }
+        public static void Cw8()
+        {
+            bool x;
+            int y = 1;
+            int z = 1;
+            x = (y == 1 && z++ == 1);
+            Console.WriteLine(x);//True
+            Console.WriteLine(y);//1
+            Console.WriteLine(z);//2
+        }
+        public static void Cw9()
+        {  //a
+            int x = 1, y = 4, z = 2;
+            bool wynik1= (x++ > 1 && y++ == 4 && z-- > 0);
+            Console.WriteLine("wynik={0} x={1} y={2} z={3}", wynik1, x,y,z);
+            //b
+            bool wynik2 = (x++ > 1 & y++ == 4 && z-- > 0);
+            Console.WriteLine("wynik={0} x={1} y={2} z={3}", wynik2, x, y, z);
+            //c
+            bool wynik3 = (x++ > 1 & y++ == 4 & z-- > 0);
+            Console.WriteLine("wynik={0} x={1} y={2} z={3}", wynik3, x, y, z);
+            //d
+            bool wynik4 = (x++ > 1 || y++ == 4 || z-- > 0);
+            Console.WriteLine("wynik={0} x={1} y={2} z={3}", wynik4, x, y, z);
+            //e
+            bool wynik5 = (x++ > 1 | y++ == 4 || z-- > 0);
+            Console.WriteLine("wynik={0} x={1} y={2} z={3}", wynik5, x, y, z);
+            //f
+            bool wynik6 = (x++ > 1 | y++ == 4 | z-- > 0);
+            Console.WriteLine("wynik={0} x={1} y={2} z={3}", wynik6, x, y, z);
+            
+        }
+        public static void Cw10()
+        {
+            int powierzchnia = 100;
+            int osoby = 10;
+            double gestoscZaludnienia =(double)osoby/ powierzchnia;
+            Console.WriteLine(gestoscZaludnienia);
+        }
+        public static void Cw11()
+        {
+            Console.WriteLine("Podaj rok");
+            var rok = int.Parse(Console.ReadLine());
+            if (rok%4==0 && rok%100==1)
+            {
+                Console.WriteLine("Podany rok jest przestepny");
+            }
+            else 
+            {
+                Console.WriteLine("Podany rok nie jest przestepny");
+            }
+        }
+        public static void Cw12()
+        {
+            Console.WriteLine("Podaj pierwsza liczbe");
+            var liczba1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj druga liczbe");
+            var liczba2 = int.Parse(Console.ReadLine());
+            if (liczba1 % liczba2 == 0)
+            {
+                Console.WriteLine("Podana liczba " + liczba1 + " jest podzielna przez " + liczba2);
+            }
+            else
+            {
+                Console.WriteLine("Podana liczba " + liczba1 + " nie jest podzielna przez " + liczba2);
+            }
+        }
+        public static void Cw13()
+        {
+            Console.WriteLine("Podaj 3 liczby odzielone przecinkami"); 
+            var userinput=Console.ReadLine();
+            string[] numbers = userinput.Split(',');
+            int[] intNumbers = new int[numbers.Length];
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                if (int.TryParse(numbers[i], out int result))
+                {
+                    intNumbers[i] = result;
+                }
+                else {
+                    Console.WriteLine("Kolego podales zle liczby");
+                        }
+                
+            }
+            var maxNumber = intNumbers.Max();
+            Console.WriteLine("Najwieksza podana liczba to; " + maxNumber);
+        }
+            public static void kalkulator()
+        {
+            Console.WriteLine("Podaj pierwsza liczbe");
+            var liczba1=double.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj druga liczbe");
+            var liczba2=double.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj dzialanie miedzy nimi");
+            var dzialanie=char.Parse(Console.ReadLine());
+            if (dzialanie=='+')
+            {
+                var wynik = liczba1 + liczba2;
+                Console.WriteLine(wynik);
+
+            }
+            else if (dzialanie=='-')
+            {
+                var wynik = liczba1 - (float)liczba2;
+                Console.WriteLine(wynik);
+            }
+           else if (dzialanie == '/')
+            {
+                var wynik = liczba1 /(float) liczba2;
+                Console.WriteLine(wynik);
+            }
+            else if(dzialanie == '*')
+            {
+                var wynik = liczba1 * (float)liczba2;
+                Console.WriteLine(wynik);
+            }
+            else if (dzialanie=='%')
+            {
+                var wynik = liczba1 % liczba2;
+                Console.WriteLine(wynik);
+            }
+            else
+            {
+                Console.WriteLine("Podales zle dane");
+                return;
+            }
+
+        }
+        public static void Cw14()
+        {
+            Console.WriteLine("Podaj liczbe a");
+            var a = int.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj liczbe b");
+            var b =int.Parse( Console.ReadLine());
+            Console.WriteLine("Podaj liczbe c");
+            var c= int.Parse(Console.ReadLine());
+            var delta = (b * b) - 4 * a * c;
+
+            Console.WriteLine("Delta równa sie: " + delta);
+            if(delta < 0)
+            {
+                Console.WriteLine("Rownanie nie ma pierwiastkow");
+            }
+            else if(delta ==0) 
+            {
+                Console.WriteLine("Rownanie ma 1 rozwiazanie");
+
+            }
+            else
+            {
+                Console.WriteLine("Rownanie ma dwa rozwiazania ");
+            }
+        }
+        public static void Cw15() 
+        {
+            
+            Console.WriteLine("Podaj srednia z ocen ");
+            var srednia =double.Parse(Console.ReadLine());
+            int stypendium=0;
+            if (srednia>=2.00 && srednia <= 3.99)
+            {
+                 stypendium = 0;
+            }
+            else if (srednia>=4.00 && srednia <= 4.79)
+            {
+                 stypendium = 350;
+            }
+            else if(srednia>=4.80 && srednia<=5.00)
+            {
+                stypendium = 550;
+            }
+            Console.WriteLine("Otrzymane stypendium wynosi: "+ stypendium+" zl");
+        }
+
+        public static void Cw16()
+        {//silnia
+            Console.WriteLine("Podaj liczbe n");
+            var n=int.Parse(Console.ReadLine());
+            var suma = 1;
+            for (int i=1; i<=n; i++)
+            {
+                suma= suma*i;
+            }
+            Console.WriteLine(suma);
+        }   
+           public static void Cw17()
+        {
+            var suma = 0;
+            var iloscLiczb = 0;
+            int aktualnaLiczba = 1;
+            while (suma<100)
+            {
+                suma += aktualnaLiczba;
+                iloscLiczb++;
+                aktualnaLiczba++;
+            }
+            Console.WriteLine($"Aby suma liczb przekroczyła 100, należy dodać {iloscLiczb} kolejnych liczb całkowitych rozpoczynając od 1.");
+
+        }
+        public static void Cw18() 
+        {
+            var suma = 0;
+            while (true)
+            { 
+                Console.WriteLine("Podaj liczbe calkowita: ");
+                var liczba=int.Parse(Console.ReadLine());
+                if (liczba==0)
+                {
+                    Console.WriteLine(suma);
+                    break;
+                }
+                else
+                {
+                    suma= suma+liczba;
+                }
+            }
+        }   
+            public static void Cw19()
+        {
+            Console.WriteLine("Podaj liczbe n by  obliczyć sume szeregu.");
+            var n = int.Parse(Console.ReadLine());
+            int i = 1;
+            var suma = 0;
+            while (i <= n)
+            {
+                suma += i;
+                i++;
+            }
+            Console.WriteLine("Suma szeregu dla "+n+" wynosi  "+suma);
+        }
+        public static void Cw20()
+        {
+            Console.WriteLine("Podaj n by znaleźć liczby doskonale");
+            if (int.TryParse(Console.ReadLine(), out int n) && n > 1)
+            {
+                Console.WriteLine("Liczby doskonale od 1 do " + n + ":");
+                for (int liczba = 1; liczba <= n; liczba++)
+                {
+                    if (CzyDoskonala(liczba))
+                    {
+                        Console.WriteLine(liczba);
+                    }
+                }
+            }
+            else {
+                Console.WriteLine("NIEPRAWIDLOWA WARTOSC");
+                return;
+                    }
+                
+             
+            static bool CzyDoskonala(int liczba)
+            {
+                int sumaDzielnikow = 0;
+                for(int dzielnik=1; dzielnik < liczba; dzielnik++)
+                {
+                    if(liczba%dzielnik==0) 
+                    {
+                        sumaDzielnikow += dzielnik;
+                    }
+                }
+                return sumaDzielnikow == liczba;
+
+            }
+        }
+        public static void moje()
+        {
+            Console.WriteLine("Podaj liczby poprzecinku");
+            var userinput=Console.ReadLine();
+            string[] numbers= userinput.Split(',');
+            int[] intnumbers=new int[numbers.Length];
+            foreach(string number in numbers)
+            { 
+                Console.WriteLine(number);
+
+            }
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                if (int.TryParse(numbers[i], out int result))
+                {
+                    intnumbers[i] = result;
+                }
+                else
+                {
+                    Console.WriteLine("blad");
+                }
+            }
+            foreach (string number in numbers)
+            {
+                Console.WriteLine(number);
+            }
+            
+        }
+            public static void moje1()
+        {
+            Console.WriteLine("Podaj pierwsza liczbe");
+            var x=int.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj druga liczbe ");
+            var y=int.Parse(Console.ReadLine());
+            for (int i = x; i <= y; i++)
+            {
+                if (i%2==0)
+                {
+                    Console.Write(i+',');
+
+                }
+            }
+        }
+        public static void moje2()
+        {
+            int[] tab1=new int[10] { -1,2,3,4,5,-6,7,8,9,10};
+            int[] tab2 = new int[10];
+            for (int i = 0; i <tab1.Length; i++)
+            {
+                if (tab1[i] > 0)
+                {
+                    tab2[i] = tab1[i];
+                }
+
+            }
+            foreach(int i in tab2)
+            {
+                Console.WriteLine(i);
+            }
+        }
+            public  static void  moje3()
+        {
+            Console.WriteLine("Wprowadz liczby do tablicy po przecinku");
+            var userinput = Console.ReadLine();
+            string[] numbers = userinput.Split(',');
+            int[] numbersTab= new int[numbers.Length];
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                if (int.TryParse(numbers[i], out numbersTab[i]))
+                {
+                    Console.WriteLine(numbersTab[i]);
+                }
+
+            }
+            int MaxLiczba = numbersTab.Max();
+            int indeksMax = Array.IndexOf(numbersTab,MaxLiczba);
+            Console.WriteLine("Maximum: "+MaxLiczba+" Indeks: "+indeksMax);
+            int MinLiczba = numbersTab.Min();
+            int indeksMin = Array.IndexOf(numbersTab, MinLiczba);
+            Console.WriteLine("Minimum: " + MinLiczba + " Indeks: " + indeksMin);
+            int suma = 0;
+            int dlugosctablicy = numbersTab.Length;
+            for (int i = 0;i < numbersTab.Length;i++)
+            {
+                suma=suma + numbersTab[i];
+
+            }
+            Console.WriteLine("Suma="+suma);
+            var srednia = suma / dlugosctablicy;
+
+
+            Console.WriteLine("Srednia: "+srednia);
+            var iloscLiczbDodatnich = 0;
+            for (int i = 0; i < numbersTab.Length; i++)
+            {
+                if (numbersTab[i]>0)
+                {
+                    iloscLiczbDodatnich++;
+
+                }
+
+            }
+            Console.WriteLine("Ilosc liczb dodatnich: " + iloscLiczbDodatnich);
+        }
+        public static void moje4()
+        {
+            Console.WriteLine("Podaj liczbe calkowita dodatnia");
+            var liczba =int.Parse(Console.ReadLine());
+            if (liczba > 0)
+            {
+                for (int i = 1; i <= liczba; i++)
+                {
+                    if (i % 2 == 1)
+                    {
+                        Console.Write(i + ",");
+                    }
+
+                }
+            }
+            else 
+            { Console.WriteLine("Podana Liczba nie jest liczba calkowita dodatnia");
+            }
+        }
+        public static void moje5()
+        {
+            Console.WriteLine("Podaj liczne calkowita dodatnia");
+            if (int.TryParse(Console.ReadLine(), out int n) && n > 0)
+            {
+                int potega = 1;
+                while (potega <= n)
+                {
+                    Console.WriteLine(potega);
+                    potega *= 2;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Podana liczba musi być dodatnia i być liczbą całkowitą.");
+            }
+        }public static void moje6()
+        {
+            var suma = 0;
+            while(true)
+            {
+                Console.WriteLine("PODAJ LICZBE");
+                var liczba=int.Parse(Console.ReadLine());
+                if (liczba == 0)
+                {
+                    Console.WriteLine(suma);
+                    break;
+
+                }
+                else {
+                    suma = suma + liczba;
+                }
+                
+            }
+        }public static void moje7()
+        {
+            var rand = new Random();
+            int r = rand.Next(1, 100);
+            Console.WriteLine(r);
+            for (int i = 0; i <=5; i++)
+            {
+                Console.WriteLine("Zgadnij wylosowana liczbe : ");
+                var userinput=int.Parse(Console.ReadLine());
+                if(userinput <r)
+                {
+                    Console.WriteLine("Podales za mala wartosc");
+
+                }
+                else if(userinput >r)
+                {
+                    Console.WriteLine("Podales za duza wartosc");
+                }
+                else if (userinput == r)
+                {
+                    Console.WriteLine("Gratulacje zgadles liczbe!");
+                    break;
+                }
+            }
+
+        } public static void moje8()
+        {
+            Console.WriteLine("Podaj liczbe");
+            var userinput = int.Parse(Console.ReadLine());
+            Console.WriteLine("Dzielniki liczby "+userinput);
+            for (int i = 1;i <= userinput; i++)
+            {
+                if (userinput%i == 0)
+                {
+                    Console.Write(i+",");
+                }
+            }
+        }public static void moje9()
+        { 
+            Console.WriteLine("Podaj liczbe, by sprawdzic czy jest liczba pierwsza");
+            var liczba=int.Parse(Console.ReadLine());  
+            if(CzyLiczbaPierwsza(liczba))
+            {
+                Console.WriteLine("Podana liczba jest liczba pierwsza");
+            }
+            else
+            {
+                Console.WriteLine("Podana liczba nie jest liczba pierwsza");
+              
+            }
+            static bool CzyLiczbaPierwsza(int liczba)
+            {
+                if (liczba <= 1)
+                {
+                    return false;
+                }
+
+                for (int i = 2; i * i <= liczba; i++)
+                {
+                    if (liczba % i == 0)
+                    {
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+
+            }
+
+    }
+
+}
