@@ -1,0 +1,283 @@
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.Security.Cryptography.X509Certificates;
+
+namespace zadaniaNa_Cwiczenia_5
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //Cw5_1();
+            //Cw5_2();
+            // Cw5_3();
+            //Cw5_4();
+            // Cw5_5();
+            // Cw5_6();
+           // Cw5_7();
+            //Cw5_8();
+          // Cw5_9();
+           // Cw5_10();
+
+
+
+        }
+
+
+        public static void Cw5_1()
+        {
+            Console.WriteLine("Podaj temperature w stopniach Fahrenheita");
+            var F = double.Parse(Console.ReadLine());
+            Console.WriteLine(Faranhait(F));
+            Console.WriteLine();
+            static double Faranhait(double F)
+            {
+                double C;
+
+                C = 5 / 9d * (F - 32);
+                return C;
+            }
+        }
+        public static void Cw5_2()
+        {
+            Console.WriteLine("Podaj liczbe a");
+            var a = int.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj liczbe b");
+            var b = int.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj liczbe x");
+            var x = int.Parse(Console.ReadLine());
+            if (CzyJestwPrzedziale(a, b, x))
+            {
+                Console.WriteLine("Podana liczba jest w przedziale.");
+
+            }
+            else
+            {
+                Console.WriteLine("Podana liczba nie należy do podanego przedziału.");
+            }
+            static bool CzyJestwPrzedziale(int a, int b, int x)
+            {
+                if (x > a && x < b)
+                {
+                    return true;
+                }
+                else return false;
+            }
+
+
+
+        }
+        public static void Cw5_3()
+        {
+            double x = 3;
+            double y = 2;
+            Console.WriteLine("Podaj współrzędną x o która chcesz przesunąć wektor");
+            var deltax = double.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj wspórzędną y o która chcesz przesunąć wektor");
+            var deltay = double.Parse(Console.ReadLine());
+            Przesun(ref x, ref y, deltax, deltay);
+
+
+
+            static void Przesun(ref double x, ref double y, double deltax, double deltay)
+            {
+                x = 3 + deltax;
+                y = 2 + deltay;
+
+                Console.WriteLine($"Nowa współrzędna x: {x}");
+                Console.WriteLine($"Nowa współrzędna y: {y}");
+            }
+
+
+        }
+        public static void Cw5_4()
+        {
+            int[] tab = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, };
+
+            Console.WriteLine("Podaj liczbe przez która chcesz mnożyć tablice");
+            var x = int.Parse(Console.ReadLine());
+            Console.WriteLine("Tablica pierwotna:");
+            foreach (int i in tab)
+            {
+                Console.Write(i + ", ");
+            }
+            Console.WriteLine("\nTablica przemnożona przez " + x);
+
+            mnozenieTablicy(tab, x);
+
+
+            static void mnozenieTablicy(int[] tab, int x)
+            {
+                int[] tab2 = new int[tab.Length];
+                for (int i = 0; i < tab.Length; i++)
+                {
+
+
+
+
+                    tab2[i] = tab[i] * x;
+
+
+                }
+                foreach (int j in tab2)
+                {
+                    Console.Write(j + ", ");
+                }
+
+            }
+        }
+        public static void Cw5_5()
+        {
+            Console.WriteLine("Podaj dlugosc");
+            var dlugosc = int.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj szerokosc");
+            var szerokosc = int.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj znak");
+            char znak = char.Parse(Console.ReadLine());
+            for (int i = 0; i < dlugosc; i++)
+            {
+                for (int j = 0; j < szerokosc; j++)
+                {
+                    Console.Write(znak);
+                }
+                Console.WriteLine();
+
+            }
+        }
+        public static void Cw5_6()
+        {
+            string[] tab = { "ala", "kot", "dom" };
+
+            Console.WriteLine("Podaj liczbe przez która chcesz mnożyć tablice");
+            var mnoznik = int.Parse(Console.ReadLine());
+            Console.WriteLine("Tablica pierwotna:");
+            foreach (string i in tab)
+            {
+                Console.Write(i + ", ");
+            }
+            Console.WriteLine("\nTablica przemnożona przez " + mnoznik);
+
+            PodwojNapisy(tab, mnoznik);
+            foreach (string wyraz in tab)
+            {
+                Console.WriteLine(wyraz);
+            }
+
+
+            static void PodwojNapisy(string[] tab, int mnoznik)
+            {
+                for (int i = 0; i < tab.Length; i++)
+                {
+                    string nowyWyraz = string.Empty;
+
+                    for (int j = 0; j < mnoznik; j++)
+                    {
+                        nowyWyraz += tab[i];
+                    }
+                    tab[i] = nowyWyraz;
+
+
+
+                }
+
+            }
+
+        }
+        public static void Cw5_7()
+        {
+            Console.WriteLine("Podaj x");
+            var x = int.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj n");
+            var n = int.Parse(Console.ReadLine());
+            rownanie(x, n);
+
+            static void rownanie(int x, int n)
+            {
+                for (int i = 0; i < n; i++)
+                {
+                    double W = (i + 1) + (i + 2) * (i + n);
+
+                    Console.WriteLine($"Dla x = {i}, W = {W}");
+                }
+
+            }
+        }
+        public static void Cw5_8()
+        {
+            Console.WriteLine("Podaj liczbe");
+            string x = Console.ReadLine();
+            Sumacyfr(x);
+
+            static void Sumacyfr (string x)
+
+            { 
+                var suma=0;
+                foreach (char cyfra in x)
+                { 
+                    if (char.IsDigit(cyfra))
+                    {
+                        int cyfraInt=int.Parse(cyfra.ToString());
+                        suma += cyfraInt;
+                    }
+
+                }
+                Console.WriteLine("Suma cyfr: " + suma);
+
+
+            }
+
+        }
+        public static void Cw5_9()
+        {
+            Console.WriteLine("Podaj liczbe");
+            var n=int.Parse(Console.ReadLine());
+            var l=Fibonacci(n);
+            Console.WriteLine(l);
+            static int Fibonacci(int n)
+            {
+                if (n <= 0)
+                {
+                    throw new ArgumentException("Numer wyrazu musi być większy od zera.");
+                }
+                if (n == 1 || n == 2)
+                {
+                    return 1;
+                }
+
+                int a = 1;
+                int b = 1;
+                int wynik = 0;
+
+                for (int i = 3; i <= n; i++)
+                {
+                    wynik = a + b;
+                    a = b;
+                    b = wynik;
+                }
+                return wynik;
+            }
+        }
+        public static void Cw5_10()
+        {
+            Console.WriteLine("Podaj n");
+            var n = int.Parse(Console.ReadLine());
+            int wynik = Oblicz(n);
+            Console.WriteLine("Wynik: " + wynik);
+            static int Oblicz(int n)
+            {
+                if (n <= 1)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return n + Oblicz(n - 1);
+                }
+
+
+            }
+
+        }
+
+    }
+}
