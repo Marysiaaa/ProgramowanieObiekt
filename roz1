@@ -1,0 +1,146 @@
+using System;
+using System.ComponentModel;
+using System.ComponentModel.Design;
+using System.Diagnostics.CodeAnalysis;
+using System.Net.Sockets;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
+using static System.Net.Mime.MediaTypeNames;
+
+namespace ZadaniaNaCwiczenia
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //Cw1_1();
+            //Cw1_2();
+            //Cw1_3();
+            //Cw1_4();
+            //Cw1_5();
+            //Cw1_6();
+            //Cw1_7();
+            //Cw1_8();
+            //Cw1_9();
+            //Cw1_10();
+          
+        }
+        public static void Cw1_1()
+        {
+            double C, F;
+            Console.WriteLine("Podaj temperature w stopniach Fahrenheita");
+            F = double.Parse(Console.ReadLine());
+            C = 5 / 9d * (F - 32);
+            Console.WriteLine(C);
+        }
+        public static void Cw1_2()
+        {
+            Console.WriteLine("podaj liczbe a");
+            var a = double.Parse(Console.ReadLine());
+            Console.WriteLine("podaj liczbe b");
+            var b = double.Parse(Console.ReadLine());
+            Console.WriteLine("podaj liczbe c");
+            var c = double.Parse(Console.ReadLine());
+            double delta = (b * b) - 4 * a * c;
+            Console.WriteLine("Wynik Delty: " + delta);
+        }
+        public static void Cw1_3()
+        {
+            Console.WriteLine("Podaj wage w kg:");
+            var waga = double.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj wzrost w metrach: ");
+            var wzrost = double.Parse(Console.ReadLine());
+            double BMI = waga / (wzrost * wzrost);
+            Console.WriteLine("Twoje BMI wynosi: " + BMI);
+            if (BMI < 18.5)
+            {
+                Console.WriteLine("NIEDOWAGA");
+            }
+            else if (BMI > 18.5 && BMI < 24.99)
+            {
+                Console.WriteLine("PRAWIDLOWA WAGA");
+            }
+            else
+            {
+                Console.WriteLine("NADWAGA");
+            }
+        }
+        public static void Cw1_4()
+        {
+            int X = 100;
+            Console.WriteLine(++X * 2);//202;-)
+
+        }
+        public static void Cw1_5()
+        {
+            int x = 2, y = 3;
+            Console.WriteLine(x *= y * 2);
+        }
+        public static void Cw1_6()
+        {
+            int x, y = 4;
+            x = (y -= 2);
+            x = y++;
+            x = y--;
+        }
+        public static void Cw1_7()
+        {
+            int x, y = 5;
+            x = ++y * 2;
+            x = y++;
+            x = y--;
+            Console.WriteLine(++y);
+        }
+        public static void Cw1_8()
+        {
+            bool x;
+            int y = 1;
+            int z = 1;
+            x = (y == 1 && z++ == 1);
+            Console.WriteLine(x);//True
+            Console.WriteLine(y);//1
+            Console.WriteLine(z);//2
+        }
+        public static void Cw1_9()
+        {  //a
+            int x = 1, y = 4, z = 2;
+            bool wynik1 = (x++ > 1 && y++ == 4 && z-- > 0);
+            Console.WriteLine("wynik={0} x={1} y={2} z={3}", wynik1, x, y, z);
+            //b
+            bool wynik2 = (x++ > 1 & y++ == 4 && z-- > 0);
+            Console.WriteLine("wynik={0} x={1} y={2} z={3}", wynik2, x, y, z);
+            //c
+            bool wynik3 = (x++ > 1 & y++ == 4 & z-- > 0);
+            Console.WriteLine("wynik={0} x={1} y={2} z={3}", wynik3, x, y, z);
+            //d
+            bool wynik4 = (x++ > 1 || y++ == 4 || z-- > 0);
+            Console.WriteLine("wynik={0} x={1} y={2} z={3}", wynik4, x, y, z);
+            //e
+            bool wynik5 = (x++ > 1 | y++ == 4 || z-- > 0);
+            Console.WriteLine("wynik={0} x={1} y={2} z={3}", wynik5, x, y, z);
+            //f
+            bool wynik6 = (x++ > 1 | y++ == 4 | z-- > 0);
+            Console.WriteLine("wynik={0} x={1} y={2} z={3}", wynik6, x, y, z);
+
+        }
+        public static void Cw1_10()
+        {
+            int powierzchnia = 100;
+            int osoby = 10;
+            double gestoscZaludnienia = (double)osoby / powierzchnia;
+            Console.WriteLine(gestoscZaludnienia);
+        }
+        public static void Cw11()
+        {
+            Console.WriteLine("Podaj rok");
+            var rok = int.Parse(Console.ReadLine());
+            if (rok % 4 == 0 && rok % 100 == 1)
+            {
+                Console.WriteLine("Podany rok jest przestepny");
+            }
+            else
+            {
+                Console.WriteLine("Podany rok nie jest przestepny");
+            }
+        }
+}
