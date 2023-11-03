@@ -1,0 +1,284 @@
+namespace _6
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //Cw3_1();
+            // Cw3_2();
+            //Cw3_3();
+          // kałkulator();
+            // Cw3_5();
+            //Cw3_6();
+            // Cw3_8();
+            //Cw3_9();
+            //Cw3_10(); 
+            // Cw3_11();
+            // cw3_12();
+            // cw3_13();
+            // cw3_14();
+            // cw3_15();
+
+        }
+
+
+        public static void Cw3_1()
+        {
+            Console.WriteLine("Podaj rok");
+            var rok = int.Parse(Console.ReadLine());
+            if (rok % 4 == 0 && rok % 100 == 1)
+            {
+                Console.WriteLine("Podany rok jest przestepny");
+            }
+            else
+            {
+                Console.WriteLine("Podany rok nie jest przestepny");
+            }
+        }
+        public static void Cw3_2()
+        {
+            Console.WriteLine("Podaj pierwsza liczbe");
+            var liczba1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj druga liczbe");
+            var liczba2 = int.Parse(Console.ReadLine());
+            if (liczba1 % liczba2 == 0)
+            {
+                Console.WriteLine("Podana liczba " + liczba1 + " jest podzielna przez " + liczba2);
+            }
+            else
+            {
+                Console.WriteLine("Podana liczba " + liczba1 + " nie jest podzielna przez " + liczba2);
+            }
+        }
+        public static void Cw3_3()
+        {
+            Console.WriteLine("Podaj 3 liczby odzielone przecinkami");
+            var userinput = Console.ReadLine();
+            string[] numbers = userinput.Split(',');
+            int[] intNumbers = new int[numbers.Length];
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                if (int.TryParse(numbers[i], out int result))
+                {
+                    intNumbers[i] = result;
+                }
+                else
+                {
+                    Console.WriteLine("Kolego podales zle liczby");
+                }
+
+            }
+            var maxNumber = intNumbers.Max();
+            Console.WriteLine("Najwieksza podana liczba to; " + maxNumber);
+        }
+        public static void kałkulator()
+        {
+            Console.WriteLine("Podaj pierwsza liczbe");
+            var liczba1 = double.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj druga liczbe");
+            var liczba2 = double.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj dzialanie miedzy nimi");
+            var dzialanie = char.Parse(Console.ReadLine());
+            if (dzialanie == '+')
+            {
+                var wynik = liczba1 + liczba2;
+                Console.WriteLine(wynik);
+
+            }
+            else if (dzialanie == '-')
+            {
+                var wynik = liczba1 - (float)liczba2;
+                Console.WriteLine(wynik);
+            }
+            else if (dzialanie == '/')
+            {
+                var wynik = liczba1 / (float)liczba2;
+                Console.WriteLine(wynik);
+            }
+            else if (dzialanie == '*')
+            {
+                var wynik = liczba1 * (float)liczba2;
+                Console.WriteLine(wynik);
+            }
+            else if (dzialanie == '%')
+            {
+                var wynik = liczba1 % liczba2;
+                Console.WriteLine(wynik);
+            }
+            else
+            {
+                Console.WriteLine("Podales zle dane");
+                return;
+            }
+
+        }
+
+        public static void Cw3_5()
+        {
+            Console.WriteLine("Podaj liczbe a");
+            var a = int.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj liczbe b");
+            var b = int.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj liczbe c");
+            var c = int.Parse(Console.ReadLine());
+            var delta = (b * b) - 4 * a * c;
+
+            Console.WriteLine("Delta równa sie: " + delta);
+            if (delta < 0)
+            {
+                Console.WriteLine("Rownanie nie ma pierwiastkow");
+            }
+            else if (delta == 0)
+            {
+                Console.WriteLine("Rownanie ma 1 rozwiazanie");
+
+            }
+            else
+            {
+                Console.WriteLine("Rownanie ma dwa rozwiazania ");
+            }
+        }
+        public static void Cw3_8()
+        {
+
+            Console.WriteLine("Podaj srednia z ocen ");
+            var srednia = double.Parse(Console.ReadLine());
+            int stypendium = 0;
+            if (srednia >= 2.00 && srednia <= 3.99)
+            {
+                stypendium = 0;
+            }
+            else if (srednia >= 4.00 && srednia <= 4.79)
+            {
+                stypendium = 350;
+            }
+            else if (srednia >= 4.80 && srednia <= 5.00)
+            {
+                stypendium = 550;
+            }
+            Console.WriteLine("Otrzymane stypendium wynosi: " + stypendium + " zl");
+        }
+
+        public static void Cw3_10()
+        {//silnia
+            Console.WriteLine("Podaj liczbe n");
+            var n = int.Parse(Console.ReadLine());
+            var suma = 1;
+            for (int i = 1; i <= n; i++)
+            {
+                suma = suma * i;
+            }
+            Console.WriteLine(suma);
+        }
+        public static void Cw3_11()
+        {
+            var suma = 0;
+            var iloscLiczb = 0;
+            int aktualnaLiczba = 1;
+            while (suma < 100)
+            {
+                suma += aktualnaLiczba;
+                iloscLiczb++;
+                aktualnaLiczba++;
+            }
+            Console.WriteLine($"Aby suma liczb przekroczyła 100, należy dodać {iloscLiczb} kolejnych liczb całkowitych rozpoczynając od 1.");
+
+        }
+        public static void Cw3_12()
+        {
+            var suma = 0;
+            while (true)
+            {
+                Console.WriteLine("Podaj liczbe calkowita: ");
+                var liczba = int.Parse(Console.ReadLine());
+                if (liczba == 0)
+                {
+                    Console.WriteLine(suma);
+                    break;
+                }
+                else
+                {
+                    suma = suma + liczba;
+                }
+            }
+        }
+        public static void Cw3_13()
+        {
+            Console.WriteLine("Podaj liczbe n by  obliczyć sume szeregu.");
+            var n = int.Parse(Console.ReadLine());
+            int i = 1;
+            var suma = 0;
+            while (i <= n)
+            {
+                suma += i;
+                i++;
+            }
+            Console.WriteLine("Suma szeregu dla " + n + " wynosi  " + suma);
+        }
+        public static void Cw3_14()
+        {
+            Console.WriteLine("Podaj n by znaleźć liczby doskonale");
+            if (int.TryParse(Console.ReadLine(), out int n) && n > 1)
+            {
+                Console.WriteLine("Liczby doskonale od 1 do " + n + ":");
+                for (int liczba = 1; liczba <= n; liczba++)
+                {
+                    if (CzyDoskonala(liczba))
+                    {
+                        Console.WriteLine(liczba);
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("NIEPRAWIDLOWA WARTOSC");
+                return;
+            }
+
+
+            static bool CzyDoskonala(int liczba)
+            {
+                int sumaDzielnikow = 0;
+                for (int dzielnik = 1; dzielnik < liczba; dzielnik++)
+                {
+                    if (liczba % dzielnik == 0)
+                    {
+                        sumaDzielnikow += dzielnik;
+                    }
+                }
+                return sumaDzielnikow == liczba;
+
+            }
+        }
+        static void cw3_15()
+        {
+            int amount = 10;
+            int[] coins = { 1, 2, 5 };
+            int ways = CountWaysToMakeChange(coins, amount);
+
+            Console.WriteLine("Liczba sposobów na wypłacenie " + amount + " zł: " + ways);
+
+            static int CountWaysToMakeChange(int[] coins, int amount)
+            {
+                int[] dp = new int[amount + 1];
+                dp[0] = 1;
+
+                foreach (int coin in coins)
+                {
+                    for (int i = coin; i <= amount; i++)
+                    {
+                        dp[i] += dp[i - coin];
+                    }
+                }
+
+                return dp[amount];
+            }
+
+        }
+
+
+
+
+
+
+    } }
