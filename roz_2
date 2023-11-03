@@ -13,19 +13,19 @@ namespace ZadaniaNaCwiczenia
     {
         static void Main(string[] args)
         {
-            //Cw1_1();
-            //Cw1_2();
-            //Cw1_3();
-            //Cw1_4();
-            //Cw1_5();
-            //Cw1_6();
-            //Cw1_7();
-            //Cw1_8();
-            //Cw1_9();
-            //Cw1_10();
+            //Cw2_1();
+            //Cw2_2();
+            //Cw2_3();
+            //Cw2_4();
+            //Cw2_5();
+            //Cw2_6();
+            //Cw2_7();
+            //Cw2_8();
+            //Cw2_9();
+            //Cw2_10();
           
         }
-        public static void Cw1_1()
+        public static void Cw2_1()
         {
             double C, F;
             Console.WriteLine("Podaj temperature w stopniach Fahrenheita");
@@ -33,7 +33,7 @@ namespace ZadaniaNaCwiczenia
             C = 5 / 9d * (F - 32);
             Console.WriteLine(C);
         }
-        public static void Cw1_2()
+        public static void Cw2_2()
         {
             Console.WriteLine("podaj liczbe a");
             var a = double.Parse(Console.ReadLine());
@@ -44,7 +44,7 @@ namespace ZadaniaNaCwiczenia
             double delta = (b * b) - 4 * a * c;
             Console.WriteLine("Wynik Delty: " + delta);
         }
-        public static void Cw1_3()
+        public static void Cw2_3()
         {
             Console.WriteLine("Podaj wage w kg:");
             var waga = double.Parse(Console.ReadLine());
@@ -65,25 +65,25 @@ namespace ZadaniaNaCwiczenia
                 Console.WriteLine("NADWAGA");
             }
         }
-        public static void Cw1_4()
+        public static void Cw2_4()
         {
             int X = 100;
             Console.WriteLine(++X * 2);//202;-)
 
         }
-        public static void Cw1_5()
+        public static void Cw2_5()
         {
             int x = 2, y = 3;
             Console.WriteLine(x *= y * 2);
         }
-        public static void Cw1_6()
+        public static void Cw2_6()
         {
             int x, y = 4;
             x = (y -= 2);
             x = y++;
             x = y--;
         }
-        public static void Cw1_7()
+        public static void Cw2_7()
         {
             int x, y = 5;
             x = ++y * 2;
@@ -91,7 +91,7 @@ namespace ZadaniaNaCwiczenia
             x = y--;
             Console.WriteLine(++y);
         }
-        public static void Cw1_8()
+        public static void Cw2_8()
         {
             bool x;
             int y = 1;
@@ -101,7 +101,7 @@ namespace ZadaniaNaCwiczenia
             Console.WriteLine(y);//1
             Console.WriteLine(z);//2
         }
-        public static void Cw1_9()
+        public static void Cw2_9()
         {  //a
             int x = 1, y = 4, z = 2;
             bool wynik1 = (x++ > 1 && y++ == 4 && z-- > 0);
@@ -123,24 +123,12 @@ namespace ZadaniaNaCwiczenia
             Console.WriteLine("wynik={0} x={1} y={2} z={3}", wynik6, x, y, z);
 
         }
-        public static void Cw1_10()
+        public static void Cw2_10()
         {
             int powierzchnia = 100;
             int osoby = 10;
             double gestoscZaludnienia = (double)osoby / powierzchnia;
             Console.WriteLine(gestoscZaludnienia);
         }
-        public static void Cw11()
-        {
-            Console.WriteLine("Podaj rok");
-            var rok = int.Parse(Console.ReadLine());
-            if (rok % 4 == 0 && rok % 100 == 1)
-            {
-                Console.WriteLine("Podany rok jest przestepny");
-            }
-            else
-            {
-                Console.WriteLine("Podany rok nie jest przestepny");
-            }
-        }
+        
 }
