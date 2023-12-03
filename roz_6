@@ -1,0 +1,287 @@
+using System.Reflection.Metadata.Ecma335;
+using System.Runtime.CompilerServices;
+
+namespace ZadaniaNaCwiczenia_6
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            var prostokat = new Prostokat
+            {
+                Dlugosc = 5,
+                Szerokosc = 3
+            };
+
+            prostokat.Prezentuj();
+
+            Prostokat[] prostokaty = new Prostokat[3];
+            prostokaty[0] = new Prostokat() { Dlugosc = 5.0, Szerokosc = 3.0 };
+            prostokaty[1] = new Prostokat() { Dlugosc = 7.0, Szerokosc = 4.0 };
+            prostokaty[2] = new Prostokat() { Dlugosc = 2.0, Szerokosc = 6.0 };
+            foreach (var prostokatElement in prostokaty)
+            {
+                prostokatElement.Prezentuj();
+                Console.WriteLine();
+
+            }
+            Prostokat.PowierzchniaNajwiekszegoProstokata(prostokaty);
+
+            var energia = new LicznikEnergii(500, 1800);
+            Console.WriteLine($"Zużyta energia: {energia.ZuzycieEnergii()}");
+            Console.WriteLine($" Biezacy stan Licznika Energii {energia.StanBiezacy}");
+
+            Console.WriteLine("Wektor pierwotny");
+            Punkt punkt = new Punkt(1, 2);
+            punkt.Wyświetl();
+            Console.WriteLine("Wektor po przesunieciu");
+            punkt.Przesun(3, 4);
+            punkt.Wyświetl(); 
+
+            Punkt[] punkty = new Punkt[3];
+            punkty[0] = new Punkt(1, 2);
+            punkty[1] = new Punkt(2, 3);
+            punkty[2] = new Punkt(3, 4);
+
+            foreach (var punktElement in punkty)
+            {
+                punktElement.Wyświetl();
+                Console.WriteLine();
+
+            }
+
+            if (Punkt.CzyWspolliniowe(punkty[0], punkty[1], punkty[2]))
+            {
+                Console.WriteLine("Wszystkie punkty leżą na tej samej prostej.");
+            }
+            else
+            {
+                Console.WriteLine("Punkty nie leżą na tej samej prostej.");
+            }
+
+            Punkt punkt1 = new Punkt(4, 4);
+            Punkt punkt2 = new Punkt(5, 3);
+
+            Odcinek odcinek = new Odcinek(punkt1, punkt2);
+            double dlugosc = odcinek.DlugoscOdcinka();
+            Console.WriteLine($"Długość odcinka: {dlugosc}");
+            Prostopadloscian prostopadloscian1 = new Prostopadloscian(3, 4, 5);
+            Prostopadloscian prostopadloscian2 = new Prostopadloscian(6, 4, 6);
+            prostopadloscian1.PorownywanieObjetosci(prostopadloscian2);
+            KandydaNaStudia kandydat = new KandydaNaStudia("Oleksinska", 90, 70, 80);
+            Console.WriteLine("Uzyskane punkty przez kandydata 1 w rekrutacji na studia: " + kandydat.UzyskanePunkty());
+            kandydat.WyswietlKandydata();
+            KandydaNaStudia[] Kandydaci2023 = new KandydaNaStudia[3];
+            Kandydaci2023[0] = new KandydaNaStudia("Karolewski", 90, 78, 100);
+            Kandydaci2023[1] = new KandydaNaStudia("Kowalski", 80, 78, 88);
+            Kandydaci2023[2] = new KandydaNaStudia("Nowak",99, 88, 79);
+            foreach (var kandydatElement in Kandydaci2023)
+            {
+                kandydatElement.WyswietlKandydata();
+                Console.WriteLine("Uzyskana suma punktow: "+kandydatElement.UzyskanePunkty());
+
+            }
+
+
+
+
+        }
+    }
+
+    public class Prostokat
+    {
+        private double _dlugosc;
+        private double _szerokosc;
+
+        public double Dlugosc
+        {
+            get { return _dlugosc; }
+            set { _dlugosc = value; }
+        }
+
+        public double Szerokosc
+        {
+            get { return _szerokosc; }
+            set { _szerokosc = value; }
+        }
+        private double Powierzchnia()
+        {
+            return Dlugosc * Szerokosc;
+        }
+        private double Obwod()
+        {
+            return 2 * Dlugosc + 2 * Szerokosc;
+        }
+
+        public void Prezentuj()
+        {
+            Console.WriteLine($"Prostokąt o długości {Dlugosc} i szerokości {Szerokosc}:");
+            Console.WriteLine($"Powierzchnia: {Powierzchnia()}");
+            Console.WriteLine($"Obwód: {Obwod()}");
+
+        }
+        public static void PowierzchniaNajwiekszegoProstokata(Prostokat[] prostokaty)
+        {
+            if (prostokaty.Length == 0)
+            {
+                Console.WriteLine("Brak prostokątów do porównania.");
+            }
+
+            double maxPowierzchnia = 0;
+            Prostokat najwiekszyProstokat = prostokaty[0];
+
+            foreach (var prostokatElement in prostokaty)
+            {
+                double powierzchnia = prostokatElement.Powierzchnia();
+
+                if (powierzchnia > maxPowierzchnia)
+                {
+                    maxPowierzchnia = powierzchnia;
+                    najwiekszyProstokat = prostokatElement;
+                }
+            }
+
+            Console.WriteLine($"Największy prostokąt ma powierzchnię: {maxPowierzchnia}");
+            najwiekszyProstokat.Prezentuj();
+        }
+    }
+
+
+
+    public class LicznikEnergii
+    {
+        public LicznikEnergii(double stanPoczatkowy, double stanBiezacy)
+        {
+            StanPoczatkowy = stanPoczatkowy;
+            StanBiezacy = stanBiezacy;
+        }
+
+        public double StanPoczatkowy { get; }
+        public double StanBiezacy { get; }
+
+        public double ZuzycieEnergii()
+        {
+            return StanBiezacy - StanPoczatkowy;
+        }
+    }
+    public class Punkt
+    {
+        private int x;
+        private int y;
+
+        public int Y { get { return y; } }
+        public int X { get { return x; } }
+
+        public Punkt(int x, int y)
+        {
+            this.x = x;
+            this.y = y;
+        }
+
+        public void Przesun(int deltaX, int deltaY)
+        {
+            x = x + deltaX;
+            y = y + deltaY;
+        }
+
+        public void Wyświetl()
+        {
+            Console.WriteLine($"[{x},{y}]");
+        }
+
+        public static bool CzyWspolliniowe(Punkt p1, Punkt p2, Punkt p3)
+        {
+            int det = p1.x * (p2.y - p3.y) + p2.x * (p3.y - p1.y) + p3.x * (p1.y - p2.y);
+            return det == 0;
+        }
+    }
+
+    public class Odcinek
+    {
+        public Punkt P1 { get; private set; }
+        public Punkt P2 { get; private set; }
+
+        public Odcinek(Punkt p1, Punkt p2)
+        {
+            this.P1 = p1;
+            this.P2 = p2;
+        }
+
+        public double DlugoscOdcinka()
+        {
+            return Math.Sqrt(Math.Pow(P1.X - P2.X, 2) + Math.Pow(P1.Y - P2.Y, 2));
+        }
+    }
+
+    public class Prostopadloscian
+    {
+        private int dlugosc;
+        private int wysokosc;
+        private int szerokosc;
+
+        public Prostopadloscian(int dlugosc, int wysokosc, int szerokosc)
+        {
+            this.dlugosc = dlugosc;
+            this.wysokosc = wysokosc;
+            this.szerokosc = szerokosc;
+        }
+
+        public int Szerokosc { get => szerokosc; set => szerokosc = value; }
+        public int Dlugosc { get => dlugosc; set => dlugosc = value; }
+        public int Wysokosc { get => wysokosc; set => wysokosc = value; }
+
+        public double Objetosc()
+        {
+            return szerokosc * dlugosc * wysokosc;
+        }
+
+        public void PorownywanieObjetosci(Prostopadloscian drugiProstopadloscian)
+        {
+            double objetosc1 = this.Objetosc();
+            double objetosc2 = drugiProstopadloscian.Objetosc();
+
+            if (objetosc1 > objetosc2)
+            {
+                Console.WriteLine("Objetosc 1 prostopadloscianu jest wieksza ");
+            }
+            else if (objetosc1 < objetosc2)
+            {
+                Console.WriteLine("Objetosc 2 protopadloscianu jest wieksza");
+            }
+            else if (objetosc1 == objetosc2)
+            {
+                Console.WriteLine("Oba prostopadlosciany maja taka sama objetosc");
+            }
+        }
+    }
+    public struct KandydaNaStudia
+    {
+        private  string nazwisko;
+        private readonly double punktyMatematyka;
+        private readonly double punktyInformatyka;
+        private readonly double punktyJezykObcy;
+
+        public KandydaNaStudia(string nazwisko, double punktyMatematyka, double punktyInformatyka, double punktyJezykObcy)
+        {
+            this.nazwisko = nazwisko;
+            this.punktyMatematyka = punktyMatematyka;
+            this.punktyInformatyka = punktyInformatyka;
+            this.punktyJezykObcy = punktyJezykObcy;
+        }
+
+        public double UzyskanePunkty()
+        {
+            return 0.6 * punktyMatematyka + 0.5 * punktyInformatyka + 0.2 * punktyJezykObcy;
+        }
+        public void WyswietlKandydata()
+        {
+            Console.WriteLine("Nazwisko :"+nazwisko);
+            Console.WriteLine("Ilosc punktow z Matematyki: "+punktyMatematyka);
+            Console.WriteLine("Ilosc punktow z Informatyki: "+punktyInformatyka);
+            Console.WriteLine("Ilosc punktow z Jezyka Obcego: "+punktyJezykObcy);
+        }
+
+    }
+}
+
