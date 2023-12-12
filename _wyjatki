@@ -1,0 +1,129 @@
+using System.Linq.Expressions;
+
+namespace wyjatki
+{
+    internal class Program
+    {
+        public class Obliczenia
+        {
+           
+            private double wynik;
+            public void Dodawanie(double a, double b)
+            {
+                wynik= a + b;
+
+            }
+            public void Odejmowanie(double a, double b)
+            {
+                wynik=a - b;
+
+            }
+            public void Mnożenie(double a, double b)
+            {
+                wynik= a * b;
+
+            }
+            public void Dzielenie(double a, double b)
+            {
+                try
+                {
+                    if (b!=0)
+                    {
+                        wynik= a / b;
+
+                    }
+                    else
+                    {
+                        throw new DivideByZeroException("Nie można dzielić przez zero.");
+
+                    }
+
+                }
+                catch (Exception ex)
+                { 
+                    Console.WriteLine($"Błąd: {ex.Message}");
+                }
+
+
+            }
+            public void Potegowanie(double podstawa, double wykladnik)
+            {
+                wynik = Math.Pow(podstawa,wykladnik);
+            }
+            public void Pierwiastkowanie(double liczba, double stopien)
+            {
+                try
+                {
+                    if (liczba >= 0)
+                    {
+                        wynik = Math.Pow(liczba, 1 / stopien);
+                    }
+                    else
+                    {
+                        throw new ArgumentException("Nie można obliczyć pierwiastka z liczby ujemnej.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Błąd: {ex.Message}");
+                }
+            }
+            public double gethWynik()
+            {
+                return wynik;
+            }
+
+        }
+        static void Main(string[] args)
+        {
+            int liczba1, liczba2, liczba3;
+            liczba3 = 0; liczba2=4;
+            int[]table= new int[2];
+            try
+            {
+                table[25] = 2;
+            }
+            
+            catch(IndexOutOfRangeException g)
+            {
+                Console.WriteLine(g.Message);
+            }
+            catch (Exception)
+            {
+
+            }
+           
+            try
+            {
+                liczba1 = liczba2 / liczba3;
+                Console.WriteLine(liczba1);
+
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Finally!!!");
+            }
+
+
+            var kalkulator = new Obliczenia();
+            kalkulator.Dodawanie(5, 7);
+            Console.WriteLine("Dodawanie "+kalkulator.gethWynik());
+            kalkulator.Odejmowanie(27, 7);
+            Console.WriteLine("Odejmowanie "+kalkulator.gethWynik());
+            kalkulator.Mnożenie(25, 4);
+            Console.WriteLine("Mnozenie "+kalkulator.gethWynik());
+            kalkulator.Dzielenie(36, 6);
+            Console.WriteLine("Dzielenie "+kalkulator.gethWynik());
+            kalkulator.Potegowanie(3, 3);
+            Console.WriteLine("Potegowanie "+kalkulator.gethWynik());
+            kalkulator.Pierwiastkowanie(8, 3);
+            Console.WriteLine("Pierwiastkowanie "+kalkulator.gethWynik());
+
+        }
+    }
+}
