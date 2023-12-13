@@ -108,7 +108,7 @@ namespace kontaBankowe
             account2.ShowBankacount();
             account.MakeWithdrawal(500, DateTime.Now, "Rent payment");
             Console.WriteLine(account.Balance);
-            account.MakeDeposit(100, DateTime.Now, "Friend paid me back");
+            account.MakeDeposit(100, DateTime.Now, "");
             Console.WriteLine(account.Balance);
             var transaction = new Transaction(2000, DateTime.Now, "wpłata");
 
