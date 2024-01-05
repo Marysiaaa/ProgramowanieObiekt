@@ -1,0 +1,110 @@
+using System.Net.NetworkInformation;
+using static zadaniaDodatkowePO.Program.Osoba;
+
+namespace zadaniaDodatkowePO
+{
+    internal class Program
+    { 
+        public interface IPraca
+        {
+            void Pracuj();
+        }
+        public class Projektant : Pracownik, IPraca
+        {
+            public override void Pracuj()
+            {
+                Console.WriteLine("Projektant projektuje wnętrza ");
+            }
+        }
+        public class Księgowa : Pracownik, IPraca
+        {
+            public override void Pracuj()
+            {
+                Console.WriteLine("Księgowa wprowadza dokumenty do systemu i rozlicza klientów");
+            }
+        }
+
+        public class Programista : Pracownik, IPraca
+        {
+            public override void Pracuj()
+            {
+                Console.WriteLine("Programista programuje");
+            }
+        }
+        public class Pracownik : IPraca
+        {
+            public virtual void Pracuj()
+            {
+                Console.WriteLine("Pracownik pracuje");
+            }
+        }
+        public class Osoba
+        { public interface IWyswietlanieInformacji
+            {
+                void WypiszInfo();
+            }
+            public Osoba(string imie, string nazwisko)
+            {
+                Imie = imie;
+                Nazwisko = nazwisko;
+            }
+
+            public  string Imie { get; }
+            public string Nazwisko { get; }
+            public virtual void WypiszInfo()
+            {
+                Console.WriteLine($"Osoba o imieniu {Imie} i nazwisku {Nazwisko}");
+            }
+        }
+
+        public class Student : Osoba, IWyswietlanieInformacji
+        {
+            public Student(string imie, string nazwisko, int rokstudiow, int numerGrupy, int numerAlbumu)
+                :base(imie, nazwisko)
+
+            {
+               
+                Rokstudiow = rokstudiow;
+                NumerGrupy = numerGrupy;
+                NumerAlbumu = numerAlbumu;
+            }
+
+          
+            public int Rokstudiow { get; }
+            public int NumerGrupy { get; }
+            public int NumerAlbumu { get; }
+            public override void WypiszInfo()
+            {
+                base.WypiszInfo();
+                Console.WriteLine($", numer grupy {NumerGrupy}, numer albumu {NumerAlbumu}, który jest na {Rokstudiow} roku studiów");
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            var p1 = new Pracownik();
+            var p2 = new Programista();
+            var p3 = new Księgowa();
+            var p4 = new Projektant();
+            p1.Pracuj();
+            p2.Pracuj();
+            p3.Pracuj();
+            p4.Pracuj();
+            List<Pracownik> pracownicy = new List<Pracownik>();
+            pracownicy.Add(p1);
+            pracownicy.Add(p2);
+            pracownicy.Add(p3);
+            pracownicy.Add(p4);
+            foreach (var pracownik in pracownicy)
+            {
+                pracownik.Pracuj();
+            }
+
+            var osoba = new Osoba("Marysia", "Oleksinska");
+            osoba.WypiszInfo();
+            var student = new Student("Kasia", "Kowalska",2, 2, 173554);
+            student.WypiszInfo();
+
+        }
+    }
+}
