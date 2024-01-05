@@ -1,1 +1,31 @@
-
+namespace zadaniaDodatkowePO
+{
+    internal class Program
+    { public interface IPraca
+        {
+            void Pracuj();
+        }
+        public class Programista : Pracownik, IPraca
+        {
+            public override void Pracuj()
+            {
+                base.Pracuj();
+                Console.WriteLine("Obowiazki Programisty");
+            }
+        }
+        public class Pracownik:IPraca
+        {
+            public virtual void Pracuj()
+            {
+                Console.WriteLine("Logowanie");
+            }
+        }
+        static void Main(string[] args)
+        {
+            var p1=new Pracownik();
+            var p2 = new Programista();
+            p1.Pracuj();
+            p2.Pracuj();
+        }
+    }
+}
