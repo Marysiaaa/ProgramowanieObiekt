@@ -1,0 +1,71 @@
+namespace zadaniaDodatkowePo_cz3
+{
+    internal class Program
+    {
+        interface ObliczaniePola
+        {
+            double ObliczPole();
+        }
+        public class Figura
+        {
+            protected int a;
+            protected int b;
+            protected int c;
+            public Figura(int a, int b, int c)
+            {
+                this.a = a;
+                this.b = b;
+                this.c = c;
+            }
+            public virtual double ObliczPole()
+            {
+                return 0;
+            }
+        }
+        public class Kwadrat : Figura, ObliczaniePola
+        {
+
+            public Kwadrat(int a)
+       : base(a, 0, 0)
+            {
+            }
+            public override double ObliczPole()
+            {
+                return a * a;
+            }
+
+
+        }
+        public class Trojkat : Figura, ObliczaniePola
+        {
+
+            public Trojkat(int a, int b, int c)
+                : base(a, b, c)
+            {
+                this.a = a;
+                this.b = b;
+                this.c = c;
+
+            }
+            public override double ObliczPole()
+            {
+                return 0.5 * a * b;
+            }
+
+
+        }
+        static void Main(string[] args)
+        {
+            List<Figura> figury = new List<Figura>();
+            figury.Add(new Trojkat(3, 4, 5));
+            figury.Add(new Kwadrat(3));
+            figury.Add(new Trojkat(4, 4, 4));
+            figury.Add(new Kwadrat(6));
+            foreach (Figura Elementfigura in figury)
+            {
+                Console.WriteLine(Elementfigura.ObliczPole());
+            }
+
+        }
+    }
+}
