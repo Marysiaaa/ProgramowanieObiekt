@@ -1,0 +1,76 @@
+namespace migracjaDanych
+{
+    internal class Program
+    {
+        public class FilleLogger : Ilogger
+        {
+            private readonly string _path;
+
+            public FilleLogger(string path)
+            {
+                _path = path;
+            }
+
+            public void LogError(string message)
+            {
+                Log(message, "Error");
+
+            }
+            public void LogInfo(string message)
+            {
+                Log(message, "info");
+
+            }
+
+            private void Log(string message, string messageType)
+            {
+                using (var streamWriter = new StreamWriter(_path, true))
+                {
+                    streamWriter.WriteLine(messageType + ":" + message);
+                }
+            }
+
+        }
+        public class ConsoleLogger : Ilogger
+        {
+            public void LogError(string message)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(message);
+            }
+
+            public void LogInfo(string message)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine(message);
+            }
+        }
+        public interface Ilogger
+        {
+            void LogError(string message);
+            void LogInfo(string message);
+        }
+        public class DbMigrator
+        {
+            private readonly Ilogger _logger;
+
+            public DbMigrator(Ilogger logger)
+            {
+                _logger = logger;
+            }
+            public void Migrate()
+            {
+                _logger.LogInfo("Rozpoczęcie migracji danych " + DateTime.Now);
+                _logger.LogInfo("Zakończenie migracji danych " + DateTime.Now);
+
+            }
+        }
+        static void Main(string[] args)
+        {
+            var desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            var logFilePath = Path.Combine(desktopPath, "log.txt");
+            var dbMigrator = new DbMigrator(new FilleLogger(logFilePath));
+            dbMigrator.Migrate();
+        }
+    }
+}
