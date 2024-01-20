@@ -1,0 +1,15 @@
+C:\Users\maria\source\repos\Vehicle\Vehicle\bin\Debug\net6.0\Vehicle.exe
+C:\Users\maria\source\repos\Vehicle\Vehicle\bin\Debug\net6.0\Vehicle.deps.json
+C:\Users\maria\source\repos\Vehicle\Vehicle\bin\Debug\net6.0\Vehicle.runtimeconfig.json
+C:\Users\maria\source\repos\Vehicle\Vehicle\bin\Debug\net6.0\Vehicle.dll
+C:\Users\maria\source\repos\Vehicle\Vehicle\bin\Debug\net6.0\Vehicle.pdb
+C:\Users\maria\source\repos\Vehicle\Vehicle\obj\Debug\net6.0\Vehicle.csproj.AssemblyReference.cache
+C:\Users\maria\source\repos\Vehicle\Vehicle\obj\Debug\net6.0\Vehicle.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\maria\source\repos\Vehicle\Vehicle\obj\Debug\net6.0\Vehicle.AssemblyInfoInputs.cache
+C:\Users\maria\source\repos\Vehicle\Vehicle\obj\Debug\net6.0\Vehicle.AssemblyInfo.cs
+C:\Users\maria\source\repos\Vehicle\Vehicle\obj\Debug\net6.0\Vehicle.csproj.CoreCompileInputs.cache
+C:\Users\maria\source\repos\Vehicle\Vehicle\obj\Debug\net6.0\Vehicle.dll
+C:\Users\maria\source\repos\Vehicle\Vehicle\obj\Debug\net6.0\refint\Vehicle.dll
+C:\Users\maria\source\repos\Vehicle\Vehicle\obj\Debug\net6.0\Vehicle.pdb
+C:\Users\maria\source\repos\Vehicle\Vehicle\obj\Debug\net6.0\Vehicle.genruntimeconfig.cache
+C:\Users\maria\source\repos\Vehicle\Vehicle\obj\Debug\net6.0\ref\Vehicle.dll
