@@ -1,0 +1,15 @@
+C:\Users\maria\source\repos\ListaZadanPO\ListaZadanPO\bin\Debug\net6.0\ListaZadanPO.exe
+C:\Users\maria\source\repos\ListaZadanPO\ListaZadanPO\bin\Debug\net6.0\ListaZadanPO.deps.json
+C:\Users\maria\source\repos\ListaZadanPO\ListaZadanPO\bin\Debug\net6.0\ListaZadanPO.runtimeconfig.json
+C:\Users\maria\source\repos\ListaZadanPO\ListaZadanPO\bin\Debug\net6.0\ListaZadanPO.dll
+C:\Users\maria\source\repos\ListaZadanPO\ListaZadanPO\bin\Debug\net6.0\ListaZadanPO.pdb
+C:\Users\maria\source\repos\ListaZadanPO\ListaZadanPO\obj\Debug\net6.0\ListaZadanPO.csproj.AssemblyReference.cache
+C:\Users\maria\source\repos\ListaZadanPO\ListaZadanPO\obj\Debug\net6.0\ListaZadanPO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\maria\source\repos\ListaZadanPO\ListaZadanPO\obj\Debug\net6.0\ListaZadanPO.AssemblyInfoInputs.cache
+C:\Users\maria\source\repos\ListaZadanPO\ListaZadanPO\obj\Debug\net6.0\ListaZadanPO.AssemblyInfo.cs
+C:\Users\maria\source\repos\ListaZadanPO\ListaZadanPO\obj\Debug\net6.0\ListaZadanPO.csproj.CoreCompileInputs.cache
+C:\Users\maria\source\repos\ListaZadanPO\ListaZadanPO\obj\Debug\net6.0\ListaZadanPO.dll
+C:\Users\maria\source\repos\ListaZadanPO\ListaZadanPO\obj\Debug\net6.0\refint\ListaZadanPO.dll
+C:\Users\maria\source\repos\ListaZadanPO\ListaZadanPO\obj\Debug\net6.0\ListaZadanPO.pdb
+C:\Users\maria\source\repos\ListaZadanPO\ListaZadanPO\obj\Debug\net6.0\ListaZadanPO.genruntimeconfig.cache
+C:\Users\maria\source\repos\ListaZadanPO\ListaZadanPO\obj\Debug\net6.0\ref\ListaZadanPO.dll
