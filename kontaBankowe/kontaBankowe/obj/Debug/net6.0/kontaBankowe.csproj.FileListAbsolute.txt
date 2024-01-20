@@ -1,0 +1,15 @@
+C:\Users\maria\source\repos\kontaBankowe\kontaBankowe\bin\Debug\net6.0\kontaBankowe.exe
+C:\Users\maria\source\repos\kontaBankowe\kontaBankowe\bin\Debug\net6.0\kontaBankowe.deps.json
+C:\Users\maria\source\repos\kontaBankowe\kontaBankowe\bin\Debug\net6.0\kontaBankowe.runtimeconfig.json
+C:\Users\maria\source\repos\kontaBankowe\kontaBankowe\bin\Debug\net6.0\kontaBankowe.dll
+C:\Users\maria\source\repos\kontaBankowe\kontaBankowe\bin\Debug\net6.0\kontaBankowe.pdb
+C:\Users\maria\source\repos\kontaBankowe\kontaBankowe\obj\Debug\net6.0\kontaBankowe.csproj.AssemblyReference.cache
+C:\Users\maria\source\repos\kontaBankowe\kontaBankowe\obj\Debug\net6.0\kontaBankowe.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\maria\source\repos\kontaBankowe\kontaBankowe\obj\Debug\net6.0\kontaBankowe.AssemblyInfoInputs.cache
+C:\Users\maria\source\repos\kontaBankowe\kontaBankowe\obj\Debug\net6.0\kontaBankowe.AssemblyInfo.cs
+C:\Users\maria\source\repos\kontaBankowe\kontaBankowe\obj\Debug\net6.0\kontaBankowe.csproj.CoreCompileInputs.cache
+C:\Users\maria\source\repos\kontaBankowe\kontaBankowe\obj\Debug\net6.0\kontaBankowe.dll
+C:\Users\maria\source\repos\kontaBankowe\kontaBankowe\obj\Debug\net6.0\refint\kontaBankowe.dll
+C:\Users\maria\source\repos\kontaBankowe\kontaBankowe\obj\Debug\net6.0\kontaBankowe.pdb
+C:\Users\maria\source\repos\kontaBankowe\kontaBankowe\obj\Debug\net6.0\kontaBankowe.genruntimeconfig.cache
+C:\Users\maria\source\repos\kontaBankowe\kontaBankowe\obj\Debug\net6.0\ref\kontaBankowe.dll
