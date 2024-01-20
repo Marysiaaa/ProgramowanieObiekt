@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "ListaZadanPo_cz3/1.0.0": {
+        "runtime": {
+          "ListaZadanPo_cz3.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ListaZadanPo_cz3/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
