@@ -1,0 +1,15 @@
+C:\Users\maria\source\repos\rzutowanie\rzutowanie\bin\Debug\net6.0\rzutowanie.exe
+C:\Users\maria\source\repos\rzutowanie\rzutowanie\bin\Debug\net6.0\rzutowanie.deps.json
+C:\Users\maria\source\repos\rzutowanie\rzutowanie\bin\Debug\net6.0\rzutowanie.runtimeconfig.json
+C:\Users\maria\source\repos\rzutowanie\rzutowanie\bin\Debug\net6.0\rzutowanie.dll
+C:\Users\maria\source\repos\rzutowanie\rzutowanie\bin\Debug\net6.0\rzutowanie.pdb
+C:\Users\maria\source\repos\rzutowanie\rzutowanie\obj\Debug\net6.0\rzutowanie.csproj.AssemblyReference.cache
+C:\Users\maria\source\repos\rzutowanie\rzutowanie\obj\Debug\net6.0\rzutowanie.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\maria\source\repos\rzutowanie\rzutowanie\obj\Debug\net6.0\rzutowanie.AssemblyInfoInputs.cache
+C:\Users\maria\source\repos\rzutowanie\rzutowanie\obj\Debug\net6.0\rzutowanie.AssemblyInfo.cs
+C:\Users\maria\source\repos\rzutowanie\rzutowanie\obj\Debug\net6.0\rzutowanie.csproj.CoreCompileInputs.cache
+C:\Users\maria\source\repos\rzutowanie\rzutowanie\obj\Debug\net6.0\rzutowanie.dll
+C:\Users\maria\source\repos\rzutowanie\rzutowanie\obj\Debug\net6.0\refint\rzutowanie.dll
+C:\Users\maria\source\repos\rzutowanie\rzutowanie\obj\Debug\net6.0\rzutowanie.pdb
+C:\Users\maria\source\repos\rzutowanie\rzutowanie\obj\Debug\net6.0\rzutowanie.genruntimeconfig.cache
+C:\Users\maria\source\repos\rzutowanie\rzutowanie\obj\Debug\net6.0\ref\rzutowanie.dll
