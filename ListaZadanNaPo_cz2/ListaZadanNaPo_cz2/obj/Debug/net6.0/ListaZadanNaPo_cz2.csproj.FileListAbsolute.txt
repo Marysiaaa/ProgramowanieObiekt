@@ -1,0 +1,15 @@
+C:\Users\maria\source\repos\ListaZadanNaPo_cz2\ListaZadanNaPo_cz2\bin\Debug\net6.0\ListaZadanNaPo_cz2.exe
+C:\Users\maria\source\repos\ListaZadanNaPo_cz2\ListaZadanNaPo_cz2\bin\Debug\net6.0\ListaZadanNaPo_cz2.deps.json
+C:\Users\maria\source\repos\ListaZadanNaPo_cz2\ListaZadanNaPo_cz2\bin\Debug\net6.0\ListaZadanNaPo_cz2.runtimeconfig.json
+C:\Users\maria\source\repos\ListaZadanNaPo_cz2\ListaZadanNaPo_cz2\bin\Debug\net6.0\ListaZadanNaPo_cz2.dll
+C:\Users\maria\source\repos\ListaZadanNaPo_cz2\ListaZadanNaPo_cz2\bin\Debug\net6.0\ListaZadanNaPo_cz2.pdb
+C:\Users\maria\source\repos\ListaZadanNaPo_cz2\ListaZadanNaPo_cz2\obj\Debug\net6.0\ListaZadanNaPo_cz2.csproj.AssemblyReference.cache
+C:\Users\maria\source\repos\ListaZadanNaPo_cz2\ListaZadanNaPo_cz2\obj\Debug\net6.0\ListaZadanNaPo_cz2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\maria\source\repos\ListaZadanNaPo_cz2\ListaZadanNaPo_cz2\obj\Debug\net6.0\ListaZadanNaPo_cz2.AssemblyInfoInputs.cache
+C:\Users\maria\source\repos\ListaZadanNaPo_cz2\ListaZadanNaPo_cz2\obj\Debug\net6.0\ListaZadanNaPo_cz2.AssemblyInfo.cs
+C:\Users\maria\source\repos\ListaZadanNaPo_cz2\ListaZadanNaPo_cz2\obj\Debug\net6.0\ListaZadanNaPo_cz2.csproj.CoreCompileInputs.cache
+C:\Users\maria\source\repos\ListaZadanNaPo_cz2\ListaZadanNaPo_cz2\obj\Debug\net6.0\ListaZadanNaPo_cz2.dll
+C:\Users\maria\source\repos\ListaZadanNaPo_cz2\ListaZadanNaPo_cz2\obj\Debug\net6.0\refint\ListaZadanNaPo_cz2.dll
+C:\Users\maria\source\repos\ListaZadanNaPo_cz2\ListaZadanNaPo_cz2\obj\Debug\net6.0\ListaZadanNaPo_cz2.pdb
+C:\Users\maria\source\repos\ListaZadanNaPo_cz2\ListaZadanNaPo_cz2\obj\Debug\net6.0\ListaZadanNaPo_cz2.genruntimeconfig.cache
+C:\Users\maria\source\repos\ListaZadanNaPo_cz2\ListaZadanNaPo_cz2\obj\Debug\net6.0\ref\ListaZadanNaPo_cz2.dll
