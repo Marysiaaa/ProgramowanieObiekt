@@ -1,0 +1,139 @@
+using System.ComponentModel;
+using System.Transactions;
+
+namespace ZadaniaPowtorkoweDoKolokwium
+{
+    internal class Program
+    { public class Punkt
+        {
+            private int x;
+            private int y;
+
+            public int Y { get { return y; }}
+            public int X { get { return x; } }
+            public Punkt(int x, int y)
+            {
+                this.x = x;
+                this.y = y;
+            }
+            public  void Przesun(int deltax, int deltaY)
+            {
+                x=x + deltax;
+                y = y + deltaY;
+            }
+            public void WyswietlPunkt()
+            {
+                Console.WriteLine($"Punkt : [{x},{y}]");
+            }
+
+
+        }
+        public class LicznikEnergii
+        {
+            public LicznikEnergii(double stanPoczatkowy, double stanBiezacy)
+            {
+                StanPoczatkowy = stanPoczatkowy;
+                StanBiezacy = stanBiezacy;
+            }
+
+            public double StanPoczatkowy { get; }
+            public double StanBiezacy { get; }
+            public double ZuzycieEnergii()
+            {
+                return StanBiezacy - StanPoczatkowy;
+            }
+        }
+
+
+        public class Prostokat
+        {
+            private double _dlugosc;
+            private double _szerokosc;
+
+
+
+            public double Dlugosc
+            {
+                get { return _dlugosc; }
+                set { _dlugosc = value; }
+            }
+
+            public double Szerokosc
+            {
+                get { return _szerokosc; }
+                set { _szerokosc = value; }
+            }
+
+            private double Powierzchnia()
+            {
+                return Dlugosc * Szerokosc;
+            }
+            private double Obwod()
+            {
+                return 2 * Dlugosc + 2 * Szerokosc;
+
+            }
+            public void Prezentuj()
+            {
+                Console.WriteLine($"Prostokąt o długosci {Dlugosc} i szerokosci {Szerokosc}");
+                Console.WriteLine($"Powierzchnia {Powierzchnia()}");
+                Console.WriteLine($"Obwod {Obwod()}");
+            }
+            public static void NajwiekszyProstokat(Prostokat[] prostokaty)
+            {
+                if (prostokaty.Length == 0)
+                {
+                    Console.WriteLine("Brak prostokatow do porownania");
+                    return;
+                }
+                double maxPowierzchnia = 0;
+                Prostokat najwiekszyProstokat = prostokaty[0];
+                foreach (var prostokat in prostokaty)
+                {
+                    double powierzchnia = prostokat.Powierzchnia();
+                    if (powierzchnia > maxPowierzchnia)
+                    {
+                        maxPowierzchnia = powierzchnia;
+                        najwiekszyProstokat = prostokat;
+                    }
+                }
+                Console.WriteLine($"Najwiekszy Prostokat ma powierzchnie: {maxPowierzchnia}");
+                najwiekszyProstokat.Prezentuj();
+
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            var prostokat = new Prostokat
+            {
+                Dlugosc = 4,
+                Szerokosc = 5,
+
+            };
+
+            prostokat.Prezentuj();
+
+            Prostokat[] prostokaty = new Prostokat[3];
+            prostokaty[0] = new Prostokat { Dlugosc = 4, Szerokosc = 5 };
+            prostokaty[1] = new Prostokat { Dlugosc = 6, Szerokosc = 9 };
+            prostokaty[2] = new Prostokat { Dlugosc = 3, Szerokosc = 7 };
+            foreach (var prostokatElement in prostokaty)
+            {
+                prostokatElement.Prezentuj();
+                Prostokat.NajwiekszyProstokat(prostokaty);
+
+            }
+
+            var energia = new LicznikEnergii(2000, 4500);
+            Console.WriteLine($"Zużyta energia: {energia.ZuzycieEnergii()}");
+            Console.WriteLine($" Biezacy stan Licznika Energii {energia.StanBiezacy}");
+
+            var punkt = new Punkt(3, 4);
+            punkt.WyswietlPunkt();
+            punkt.Przesun(2, 4);
+            punkt.WyswietlPunkt();
+
+        }
+    }
+}
